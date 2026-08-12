@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>German & Amharic Translator</title>
+</head>
+<body>
+    <h2>Translator</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="translate" placeholder="Enter text here..." rows="4" cols="50" required></textarea>
+        <br><br>
+
+        <label for="from_language">From:</label>
+        <select name="from_language" id="from_language" required>
+            <option value="de">German</option>
+            <option value="am">Amharic</option>
+        </select>
+
+        <label for="to_language">To:</label>
+        <select name="to_language" id="to_language" required>
+            <option value="am">Amharic</option>
+            <option value="de">German</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Translate</button>
+    </form>
+
+    {% if translation %}
+        <hr>
+        <h3>Translation:</h3>
+        <p><strong>{{ translation }}</strong></p>
+    {% endif %}
+</body>
+</html>
