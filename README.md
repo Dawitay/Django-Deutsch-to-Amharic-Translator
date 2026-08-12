@@ -1,0 +1,1 @@
+# Django-Deutsch-to-Amharic-Translator
